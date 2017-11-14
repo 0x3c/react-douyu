@@ -1,5 +1,5 @@
 import React from 'react'
-import './idex.css'
+import './index.css'
 import 'whatwg-fetch'
 
 

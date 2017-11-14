@@ -1,10 +1,14 @@
 .nav-logo{
     display: block;
     float: left;
-    height: 60px;
-    animation:xuanzhuan 3s linear infinite;
+    height: 40px;
+    margin-top: 10px;
+    animation:xuanzhuan 4s linear infinite;
+}
+.nav-logo::after{
+    clear: both;
 }
 @keyframes xuanzhuan{
     from {transform:rotate(0deg)}
-    to {transform:rotate(300deg)}
+    to {transform:rotate(360deg)}
 }
