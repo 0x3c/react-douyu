@@ -1,0 +1,17 @@
+.room-float{
+    float: left;
+    width: 275px;
+    height: 219px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 20px;
+    box-sizing:content-box;
+}
+.room-avatar{
+    width: 42px;
+    height: 42px;
+}
+.room-room_src{
+    width:275px;
+    height:157px;
+}

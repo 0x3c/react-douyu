@@ -1,0 +1,10 @@
+.roombox{
+    margin: 0 auto;
+    height: 100%;
+    background: #FFF;
+    width: 1200px;
+    list-style: none;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 80px;
+}
