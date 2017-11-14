@@ -1,0 +1,10 @@
+.nav-logo{
+    display: block;
+    float: left;
+    height: 60px;
+    animation:xuanzhuan 3s linear infinite;
+}
+@keyframes xuanzhuan{
+    from {transform:rotate(0deg)}
+    to {transform:rotate(300deg)}
+}

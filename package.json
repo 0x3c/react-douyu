@@ -12,5 +12,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "proxy": "http://open.douyucdn.cn",
+  "devDependencies": {
+    "stylus": "^0.54.5",
+    "whatwg-fetch": "^2.0.3"
   }
 }

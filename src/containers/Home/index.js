@@ -31,17 +31,18 @@ class Home extends React.Component{
     render(){
 
         return [                
-            <div className="home-header">
+            <div className="home-header" key="hom1">
                 <Nav />
             </div>,
-            <div className="home-contianer">
+            <div className="home-contianer" key="hom2">
                 <RoomList list={this.state.data} />
             </div>,
-            <div>
-                {/* <embed width="640" height="360"  src="https://staticlive.douyucdn.cn/common/share/play.swf?room_id=616211" 
-                quality="high" bgcolor="#000" wmode="window" allowfullscreen="true" 
-                allowFullScreenInteractive="true" type="application/x-shockwave-flash" /> */}
-            </div>
+            // <div>
+            //     <embed width="640" height="360"  allownetworking="all" allowscriptaccess="always" 
+            //     src="https://staticlive.douyucdn.cn/common/share/play.swf?room_id=97376" 
+            //     quality="high" bgcolor="#000" wmode="window" allowfullscreen="true" 
+            //      type="application/x-shockwave-flash" />
+            // </div>,
         ]
     }
 
