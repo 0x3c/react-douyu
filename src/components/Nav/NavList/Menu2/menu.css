@@ -1,0 +1,51 @@
+.menu2-more{
+    display: block;
+    margin-top: 10px;
+    height: 24px;
+    background: #f70;
+    line-height: 24px;
+    color: #FFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.menu2-list h3{
+    margin: 8px 0 4px;
+    color: #444;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+    font-family: "microsoft yahei";
+    text-align: left;
+}
+.menu2-list>ul{
+    width: 250px;
+    padding-bottom: 10px;
+}
+.menu2-list>ul>li{
+    float: left;
+    height: 27px;
+    padding: 0 3px 3px 0;
+}
+.menu2-list>ul::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.menu2-list>ul>li>a{
+    display: block;
+    padding: 0;
+    width: 80px;
+    height: 24px;
+    background: #ececec;
+    border: none;
+    font-size: 12px;
+    line-height: 24px;
+    color: #797979;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 3px;
+}
