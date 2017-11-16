@@ -9,6 +9,6 @@
     right: 7px;
     cursor: pointer;
 }
-.drop-icon:hover{
+.drop-icon-hover{
     background: url("./files/assort-icon-hover.png");
 }

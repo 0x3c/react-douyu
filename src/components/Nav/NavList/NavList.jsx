@@ -14,24 +14,38 @@ export default class NavList extends React.Component{
         this.onHover=this.onHover.bind(this);
         this.onLeave=this.onLeave.bind(this);
     }
+    componentWillMount(){
+
+    }
     onHover(){
         //弹出二级菜单
-        console.log('showing!')
-        //改变下拉组件为hover状态
+        const isHover=this.state.isHover;
+        if(isHover){
+            return;
+        }
+        this.setState({isHover:true});
+        // console.log('hovered')
     }
     onLeave(){
         //隐藏二级菜单
-        console.log('dispeared!')
-        //改变下拉组件为正常状态
+        const isHover=this.state.isHover;
+        if(isHover){
+            this.setState({isHover:false});
+            // console.log('dispeared!')
+        }
     }
     render(){
+        const isHover=this.state.isHover;
+        const items=this.props.items;
         return (
             <ul className="navlist-ul">
                 <li> <a href="#"> 首页 </a> </li>
                 <li> <a href="#"> 直播 </a> </li>
-                <li> <a href="#" onMouseEnter={this.onHover}
-                    onMouseLeave={this.onLeave}
-                > 分类 </a> <Drop /><Menu2 className="navlist-menu2"/></li>
+                <li onMouseEnter={this.onHover}
+                    onMouseLeave={this.onLeave}> 
+                    <a href="#"> 分类 </a> <Drop isHover={isHover} />
+                    <Menu2 items={items} isHover={isHover} className="navlist-menu2"/>
+                </li>
                 <li> <a href="#"> 游戏 </a> </li>
             </ul>
         )    
