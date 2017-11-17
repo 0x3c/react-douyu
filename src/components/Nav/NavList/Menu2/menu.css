@@ -11,6 +11,9 @@
     font-weight: 700;
     margin-bottom: 8px;
 }
+.menu2-more:hover{
+    background: #F14700;
+}
 .menu2-list h3{
     margin: 8px 0 4px;
     color: #444;
@@ -40,13 +43,17 @@
     width: 80px;
     height: 24px;
     background: #ececec;
-    border: none;
+    /* border: none; */
     font-size: 12px;
     line-height: 24px;
     color: #797979;
-    text-overflow: ellipsis;
+    /* text-overflow: ellipsis; */
     white-space: nowrap;
     overflow: hidden;
     text-align: center;
     border-radius: 3px;
+}
+.menu2-list>ul>li>a:hover{
+    background: #f70;
+    color: #FFF;
 }
