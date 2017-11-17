@@ -39,14 +39,14 @@ export default class NavList extends React.Component{
         const items=this.props.items;
         return (
             <ul className="navlist-ul">
-                <li> <a href="#"> 首页 </a> </li>
-                <li> <a href="#"> 直播 </a> </li>
+                <li> <a href="/"> 首页 </a> </li>
+                <li> <a href="/live"> 直播 </a> </li>
                 <li onMouseEnter={this.onHover}
                     onMouseLeave={this.onLeave}> 
-                    <a href="#"> 分类 </a> <Drop isHover={isHover} />
+                    <a href="/directory"> 分类 </a> <Drop isHover={isHover} />
                     <Menu2 items={items} isHover={isHover} className="navlist-menu2"/>
                 </li>
-                <li> <a href="#"> 游戏 </a> </li>
+                <li> <a href="/game"> 游戏 </a> </li>
             </ul>
         )    
     }

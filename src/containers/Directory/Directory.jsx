@@ -3,7 +3,7 @@ import React from 'react'
 import './directory.css'
 
 import Nav from '../../components/Nav'
-import SortItem from '../../components/SortItem'
+import SortItems from '../../components/SortItems'
 
 export default class Directory extends React.Component {
     constructor(props) {
@@ -37,16 +37,18 @@ export default class Directory extends React.Component {
         this.getAllLive();
         this.getAllDir();
     }
-    componentDidMount(){
-    }
 
     render() {
         const dir_list=this.state.dir.slice(0,9); 
+        const dir_lists=this.state.dir.slice(0); 
         return [
-            <div className="home-header" key="hom1">
+            <div className="home-header" key="dir-header">
                 <Nav items={dir_list}/>
             </div>,
-
-        ]
+            <div className="home-contianer" key="dir-items" >
+                <SortItems items={dir_lists}/>    
+            </div>
+           
+    ]
     }
 }

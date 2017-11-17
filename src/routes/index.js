@@ -3,6 +3,8 @@ import {BrowserRouter  as Router,Route,Switch} from 'react-router-dom'
 
 import Home from '../containers/Home'
 import Directory from '../containers/Directory/Directory.jsx'
+import comic from '../containers/comic.jsx'
+
 const Routes=()=>(
     <Router>
         <Switch>
