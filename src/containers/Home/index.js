@@ -14,7 +14,6 @@ class Home extends React.Component{
             dir: []
         };
         this.getAllLive=this.getAllLive.bind(this);
-        this.getData=this.getData.bind(this);
         this.getAllDir=this.getAllDir.bind(this);
         this.sortDir=this.sortDir.bind(this);
     }
@@ -40,9 +39,6 @@ class Home extends React.Component{
         this.getAllDir();
     }
     componentDidMount(){
-    }
-    getData(){
-        console.log( this.state.dir)
     }
     render(){
         const dir_list=this.state.dir.slice(0,9); 

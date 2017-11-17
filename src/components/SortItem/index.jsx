@@ -1,8 +1,8 @@
-import react from 'react'
+import React from 'react'
 
 import './index.css'
 
-export default class SortItem extends react.Component {
+export default class SortItem extends React.Component {
     constructor(props) {
         super(props);
         this.state={
@@ -10,18 +10,18 @@ export default class SortItem extends react.Component {
             dir: []
         };
     }
-    render() {
+    render(){
 
-        return (
+        return(
             <li className="sort-item">
-                <a className="sort-item-box">
-                    <img className="sort-item-thum"/>
-                    <p className="sort-item-title">绝地求生</p>
-                    <div className="sort-item-shadow">
+            <a className="sort-item-box">
+                <img className="sort-item-thum"/>
+                <p className="sort-item-title">绝地求生</p>
+                <div className="sort-item-shadow">
 
-                    </div>
-                </a>
-            </li>
-        )
+                </div>
+            </a>
+          </li>
+        );
     }
 }
