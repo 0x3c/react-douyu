@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function Item(props){
-    console.log(props.item)
     return(
         <li className="sort-item">
             <a className="sort-item-box">
