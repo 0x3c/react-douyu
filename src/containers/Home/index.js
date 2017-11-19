@@ -44,9 +44,7 @@ class Home extends React.Component{
         const dir_list=this.state.dir.slice(0,9); 
         const live=this.state.live
         return [                
-            <div className="home-header" key="hom1">
-                <Nav items={dir_list}/>
-            </div>,
+            <Nav items={dir_list} key="hom1" />,
             <div className="home-contianer" key="hom2">
                 <RoomList list={live} />
             </div>,

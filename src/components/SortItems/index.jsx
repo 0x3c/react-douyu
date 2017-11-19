@@ -19,7 +19,7 @@ export default function SortItems (props){
         const items=props.items.slice(0);
         return (
             <div>
-                { items.length>999 ?
+                { items.length>0 ?
                     items.map((item)=>
                        {
                            return <Item key={item.cate_id} item={item}/>;

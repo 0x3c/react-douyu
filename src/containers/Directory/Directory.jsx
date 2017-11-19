@@ -4,6 +4,7 @@ import './directory.css'
 
 import Nav from '../../components/Nav'
 import SortItems from '../../components/SortItems'
+import SideMenu from '../../components/SideMenu/SideMenu'
 
 export default class Directory extends React.Component {
     constructor(props) {
@@ -45,7 +46,8 @@ export default class Directory extends React.Component {
             <div className="home-header" key="dir-header">
                 <Nav items={dir_list}/>
             </div>,
-            <div className="home-contianer" key="dir-items" >
+            <SideMenu key="dir-side-menu" />,
+            <div className="dir-contianer" key="dir-items" >
                 <SortItems items={dir_lists}/>    
             </div>
            

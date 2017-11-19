@@ -7,13 +7,20 @@ import './index.css'
 import Logo from './Logo/Logo.jsx'
 import NavList from './NavList/NavList.jsx'
 
+function xx(){
+    console.log(window.location.pathname)
+}
+
 function Nav(props){
     const items=props.items;
     return (
-        <div className="nav">
-            <Logo />
-            <NavList items={items}/>
-            {/* <User /> */}
+        <div className="header">
+            <div className="nav">
+                <Logo />
+                <NavList items={items}/>
+                {/* <User /> */}
+                <button onClick={xx}>xxx</button>
+            </div>
         </div>
     )
 }

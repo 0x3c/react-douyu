@@ -9,10 +9,12 @@
     z-index: 10;
     background-color: #232323;
 }
-.home-contianer{
+.dir-contianer{
     margin: 0 auto;
-    width: 1200px;
+    width: 100%;
+    min-width: 1200px;
     box-sizing: border-box;
-    padding-left: 20px;
+    padding-left: 260px;
     padding-top: 80px;
+    overflow: hidden;
 }
