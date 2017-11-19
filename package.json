@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "js-md5": "^0.7.2",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",
     "react-scripts": "1.0.17"
@@ -15,6 +16,8 @@
   },
   "proxy": "http://open.douyucdn.cn",
   "devDependencies": {
+    "ramda": "^0.25.0",
+    "react-fontawesome": "^1.6.1",
     "react-router-dom": "^4.2.2",
     "stylus": "^0.54.5",
     "whatwg-fetch": "^2.0.3"

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import FontAwesome from 'react-fontawesome'
 // import './index.css'
 
 import loadpic from './files/loading0.gif'
@@ -9,19 +9,19 @@ import loadpic from './files/loading0.gif'
 const loading_box={
     width: "100%",
     height: "100%",
-    background: "rgb(6,39,52)",
+    textAlign: "center",
+    // background: "rgb(6,39,52)",
 }
 const loading_img={
     margin: "0 auto",
     display: "block",
-    width: "10%",
-    height: "auto",
 }
 
 export default function Loading(props){
     return (
         <div style={loading_box}>
-                <img style={loading_img} src={loadpic} alt="loading"/>
+                {/* <img style={loading_img} src={loadpic} alt="loading"/> */}
+                <FontAwesome className="fa-spinner fa-pulse " />
         </div>
     )
 }
