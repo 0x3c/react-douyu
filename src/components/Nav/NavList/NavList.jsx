@@ -9,7 +9,9 @@ export default class NavList extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isHover:false
+            isHover:false,
+            path:['/','/live','/directory','/game'],
+            location:""
         };
         this.onHover=this.onHover.bind(this);
         this.onLeave=this.onLeave.bind(this);
@@ -37,16 +39,25 @@ export default class NavList extends React.Component{
     render(){
         const isHover=this.state.isHover;
         const items=this.props.items;
+        const url=window.location.pathname;
+        const path=this.state.path;
         return (
             <ul className={style.container}>
-                <li> <a href="/"> 首页 </a> </li>
-                <li> <a href="/live"> 直播 </a> </li>
+                <li> <a href={path[0]}  
+                    className={url===path[0]?style.selected:null}> 首页 </a> 
+                </li>
+                <li> 
+                    <a href={path[1]}  className={url===path[1]?style.selected:null}> 直播 </a> 
+                </li>
                 <li onMouseEnter={this.onHover}
                     onMouseLeave={this.onLeave}> 
-                    <a href="/directory"> 分类 </a> <Drop isHover={isHover} />
+                    <a href={path[2]}  className={url===path[2]?style.selected:null}> 分类 </a> 
+                    <Drop isHover={isHover} />
                     <Menu2 items={items} isHover={isHover} className="navlist-menu2"/>
                 </li>
-                <li> <a href="/game"> 游戏 </a> </li>
+                <li> 
+                    <a href={path[3]} className={url===path[3]?style.selected:null}> 游戏 </a> 
+                </li>
             </ul>
         )    
     }
