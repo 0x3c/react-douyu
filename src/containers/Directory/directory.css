@@ -1,7 +1,7 @@
 .directory{
 
 }
-.home-header{
+.header{
     height: 60px;
     width: 100%;
     border-bottom-color: #4d4d4d;
@@ -9,7 +9,7 @@
     z-index: 10;
     background-color: #232323;
 }
-.dir-contianer{
+.contianer{
     margin: 0 auto;
     width: 100%;
     min-width: 1200px;

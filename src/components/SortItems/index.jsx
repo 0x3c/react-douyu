@@ -1,6 +1,5 @@
 import React from 'react'
 
-import './index.css'
 import Item from './Item'
 import Loading from '../Loading'
 // const SortItem=(item)=>{

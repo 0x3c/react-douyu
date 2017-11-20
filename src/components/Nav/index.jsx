@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './index.css'
+import style from './index.css'
 
 
 // import User from './User/User.jsx'
@@ -14,8 +14,8 @@ function xx(){
 function Nav(props){
     const items=props.items;
     return (
-        <div className="header">
-            <div className="nav">
+        <div className={style.header}>
+            <div className={style.nav}>
                 <Logo />
                 <NavList items={items}/>
                 {/* <User /> */}

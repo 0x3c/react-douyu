@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './menu.css'
+import style from'./menu.css'
 
 export default function Menu2(props){
     const isHover=props.isHover;
@@ -10,13 +10,13 @@ export default function Menu2(props){
     })
     return(
         isHover &&
-        <div className={props.className}>
-            <i></i>
-            <div className="menu2-list">
+        <div className={style.subnav}>
+            {/* <i></i> */}
+            <div className={style.menu}>
                 <h3>热门分类</h3>
                 <ul>{itemList}</ul>
             </div>
-            <a className="menu2-more" target="_blank" href="/directory">全部 &gt;&gt;</a>
+            <a className={style.more} target="_blank" href="/directory">全部 &gt;&gt;</a>
         </div>
     )
 }

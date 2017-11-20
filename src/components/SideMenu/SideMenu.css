@@ -1,4 +1,4 @@
-.side-menu{
+.container{
     width: 240px;
     /* height: 100%; */
     position: fixed;
@@ -7,7 +7,7 @@
     bottom: 0;
     left: 0;
 }
-.side-menu-content{
+.wrapper{
     height: 100%;
     width: 100%;
     overflow: auto;

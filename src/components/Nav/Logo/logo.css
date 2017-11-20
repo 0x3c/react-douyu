@@ -1,11 +1,11 @@
-.nav-logo{
+.logo{
     display: block;
     float: left;
     height: 40px;
     margin-top: 10px;
     animation:xuanzhuan 4s linear infinite;
 }
-.nav-logo::after{
+.logo::after{
     clear: both;
 }
 @keyframes xuanzhuan{

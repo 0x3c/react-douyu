@@ -1,12 +1,12 @@
 import React from 'react'
 
-import './SideMenu.css'
+import style from './SideMenu.css'
 
 export default class SideMenu extends React.Component{
     render(){
         return(
-            <div className="side-menu">
-                <div className="side-menu-content">
+            <div className={style.container}>
+                <div className={style.wrapper}>
                     
                 </div>
             </div>

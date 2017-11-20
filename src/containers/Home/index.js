@@ -1,7 +1,7 @@
 import React from 'react'
-import './index.css'
 import 'whatwg-fetch'
 
+import style from'./index.css'
 
 import RoomList from '../../components/RoomList/RoomList.jsx'
 import Nav from '../../components/Nav'
@@ -43,9 +43,10 @@ class Home extends React.Component{
     render(){
         const dir_list=this.state.dir.slice(0,9); 
         const live=this.state.live
+        console.log(style)
         return [                
             <Nav items={dir_list} key="hom1" />,
-            <div className="home-contianer" key="hom2">
+            <div className={style.homeContianer} key="hom2">
                 <RoomList list={live} />
             </div>,
             // <div>

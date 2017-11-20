@@ -1,6 +1,6 @@
 import React from 'react'
 // import fx from '../../utils/API.js'
-import './directory.css'
+import style from './directory.css'
 
 import Nav from '../../components/Nav'
 import SortItems from '../../components/SortItems'
@@ -43,11 +43,11 @@ export default class Directory extends React.Component {
         const dir_list=this.state.dir.slice(0,9); 
         const dir_lists=this.state.dir.slice(0); 
         return [
-            <div className="home-header" key="dir-header">
+            <div className={style.header} key="dir-header">
                 <Nav items={dir_list}/>
             </div>,
             <SideMenu key="dir-side-menu" />,
-            <div className="dir-contianer" key="dir-items" >
+            <div className={style.contianer} key="dir-items" >
                 <SortItems items={dir_lists}/>    
             </div>
            

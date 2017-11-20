@@ -1,4 +1,4 @@
-.menu2-more{
+.more{
     display: block;
     margin-top: 10px;
     height: 24px;
@@ -11,10 +11,10 @@
     font-weight: 700;
     margin-bottom: 8px;
 }
-.menu2-more:hover{
+.more:hover{
     background: #F14700;
 }
-.menu2-list h3{
+.menu h3{
     margin: 8px 0 4px;
     color: #444;
     font-size: 14px;
@@ -23,21 +23,21 @@
     font-family: "microsoft yahei";
     text-align: left;
 }
-.menu2-list>ul{
+.menu>ul{
     width: 250px;
     padding-bottom: 10px;
 }
-.menu2-list>ul>li{
+.menu>ul>li{
     float: left;
     height: 27px;
     padding: 0 3px 3px 0;
 }
-.menu2-list>ul::after{
+.menu>ul::after{
     content: '';
     clear: both;
     display: block;
 }
-.menu2-list>ul>li>a{
+.menu>ul>li>a{
     display: block;
     padding: 0;
     width: 80px;
@@ -53,7 +53,22 @@
     text-align: center;
     border-radius: 3px;
 }
-.menu2-list>ul>li>a:hover{
+.menu>ul>li>a:hover{
     background: #f70;
     color: #FFF;
+}
+
+
+
+.subnav{
+    width: 247px;
+    position: absolute;
+    background: #FFF;
+    top: 60px;
+    padding: 10px 15px;
+    right: -85px;
+    z-index: 10;
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
