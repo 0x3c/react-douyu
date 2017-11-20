@@ -1,7 +1,7 @@
 import React from 'react'
 import Room from './Room/Room'
 
-import './RoomList.css'
+import style from './RoomList.css'
 
 export default  function RoomList(props){
     const list=props.list;
@@ -9,7 +9,7 @@ export default  function RoomList(props){
         (item)=><Room key={item.room_id} room_info={item}/>
     )
     return (
-        <ul className="roombox">
+        <ul className={style.roombox}>
            {roomlist}
         </ul>
 

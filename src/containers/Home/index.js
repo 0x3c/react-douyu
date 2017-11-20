@@ -43,7 +43,6 @@ class Home extends React.Component{
     render(){
         const dir_list=this.state.dir.slice(0,9); 
         const live=this.state.live
-        console.log(style)
         return [                
             <Nav items={dir_list} key="hom1" />,
             <div className={style.homeContianer} key="hom2">

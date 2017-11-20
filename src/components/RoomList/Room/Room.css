@@ -1,4 +1,4 @@
-.room-float{
+.room{
     float: left;
     width: 275px;
     height: 219px;
@@ -7,11 +7,11 @@
     margin-right: 20px;
     box-sizing:content-box;
 }
-.room-avatar{
+.avatar{
     width: 42px;
     height: 42px;
 }
-.room-room_src{
+.img{
     width:275px;
     height:157px;
 }

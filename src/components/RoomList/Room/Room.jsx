@@ -1,12 +1,12 @@
 import React from 'react'
-import './Room.css'
+import style from './Room.css'
 export default function Room(props){
     const info=props.room_info;
     return (
-        <li className="room-float" onClick={()=>window.open(info.url)}>
-           <img className="room-room_src" src={info.room_src} alt={info.room_name} />
-           <div className="room-msgbox">
-                <img className="room-avatar" src={info.avatar_small} alt={info.nickname}/>
+        <li className={style.room} onClick={()=>window.open(info.url)}>
+           <img className={style.img} src={info.room_src} alt={info.room_name} />
+           <div className="">
+                <img className={style.avatar} src={info.avatar_small} alt={info.nickname}/>
                 <span >{info.nickname}</span>
            </div>
         </li>
