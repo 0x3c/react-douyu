@@ -2,11 +2,11 @@ import React from 'react'
 
 import style from './SideMenu.css'
 
-import {getFetchData} from '../../utils/API.js'
+// import {getFetchData} from '../../utils/API.js'
 
 export default class SideMenu extends React.Component{
     componentDidMount(){
-        getFetchData();
+        // getFetchData();
     }
     render(){
         return(
