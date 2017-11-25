@@ -19,12 +19,12 @@ class Home extends React.Component{
     }
     getAllLive(){
         fetch('/api/RoomApi/live')
-        .then(resp=>resp.json())
+        .then(resp=>{console.log(resp);return resp.json()})
         .then(data=>this.setState({live:data.data}))
     }
     getAllDir(){
         fetch('/api/RoomApi/game')
-        .then(resp=>resp.json())
+        .then(resp=>{console.log(resp);return resp.json()})
         .then(data=>this.sortDir(data.data))
     }
     sortDir(data){
