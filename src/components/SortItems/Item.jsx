@@ -26,7 +26,7 @@ export default class Item extends React.Component{
         return(
             <li className={style.itemContainer}>
                 <a className={style.itemBox} onMouseEnter={this.isHover} 
-                    onMouseLeave={this.isLeave}>
+                    onMouseLeave={this.isLeave} >
                     <img className={style.itemThum} src={this.props.item.game_src} 
                     style={isHover?{opacity: 0.8}:null} alt="xx" />
                     <p className={style.itemTitle} style={isHover?{borderBottomColor: "#D2D2D2"}:null}>

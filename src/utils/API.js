@@ -1,23 +1,21 @@
 import R from 'ramda'
 import md5 from 'js-md5'
-import 'whatwg-fetch'
 // const md5=require("js-md5")
 // const R =require('ramda')
 //根据指定参数返回相应api的完整地址
 //请求基地址: http://capi.douyucdn.cn
-const BASE_URL="http://capi.douyucdn.cn";
+// const BASE_URL="http://capi.douyucdn.cn";
 // console.log(md5("xxas"))
 
 function getFetchData(){
     const url=getT1Live();
     let dat={};
-    fetch(BASE_URL+url)
+    fetch(url)
         .then(resp=>resp.json())
-        .then(data=>{
-            dat=data;
-            console.log(data)}
+        .then(data=>
+            dat=data
         )
-    console.log(dat)
+    return dat;
 }
 
 //获取父频道
@@ -84,4 +82,4 @@ function delRemind(token,ids){
     return `/api/v1/follow/del`
 }
 
-export {getFetchData}
+export {getT1Live}

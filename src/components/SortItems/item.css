@@ -29,7 +29,7 @@
     color: #7e7e7e;
     height: 1.5em;
     line-height: 1.5em;
-    margin: 7px auto 5px;
+    margin: 7px auto 0;
 }
 .itemTitle>a{
     font-family: 'Microsoft YaHei';

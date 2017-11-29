@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Item from './Item'
+import Title from './Title/Title'
 import Loading from '../Loading'
 // const SortItem=(item)=>{
 //     <li key={item.cate_id} className="sort-item">
@@ -18,6 +19,7 @@ export default function SortItems (props){
         const items=props.items.slice(0);
         return (
             <div>
+                <Title sort={props.sort}/>
                 { items.length>0 ?
                     items.map((item)=>
                        {
