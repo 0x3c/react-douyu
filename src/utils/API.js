@@ -82,4 +82,4 @@ function delRemind(token,ids){
     return `/api/v1/follow/del`
 }
 
-export {getT1Live}
+export {getT1Live,getT2Live,getT2Room}

@@ -3,14 +3,15 @@ import React from 'react'
 import style from './title.css'
 
 export default function Title(props){
-    // console.log(props.sort)
+        //根据传递进来的一级频道生成小标签
     const items=props.sort.map((v)=>
         {return(
             <li className={style.item} key={v.cate_id}>
-                <a href={`/${v.short_name}`}>{v.cate_name}</a>
+                <a onClick={props.onClick} data={v.short_name}>{v.cate_name}</a>
             </li>)
         }
     )
+
     return(
         <div className={style.warpper}>
             <div className={style.title}>

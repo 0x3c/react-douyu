@@ -1,5 +1,5 @@
 import React from 'react'
-import {getT1Live} from '../../utils/API.js'
+import {getT1Live,getT2Live,getT2Room} from '../../utils/API.js'
 import style from './directory.css'
 import  'whatwg-fetch'
 
@@ -15,7 +15,8 @@ export default class Directory extends React.Component {
         //dir: 所有分类列表
         //columns: 一级分类列表
         this.state={
-            live: {},
+            showLive:false,
+            live: [],
             dir: [],
             columns:[]
         };
@@ -23,6 +24,8 @@ export default class Directory extends React.Component {
         this.getAllDir=this.getAllDir.bind(this);
         this.sortDir=this.sortDir.bind(this);
         this.getT1=this.getT1.bind(this);
+        this.getT2=this.getT2.bind(this);
+        this.getT2Room=this.getT2Room.bind(this);
     }
     //获取所有直播房间
     getAllLive(){
@@ -43,6 +46,7 @@ export default class Directory extends React.Component {
             .then(resp=>resp.json())
             .then(data=>this.setState({columns:data.data}))
     }
+    //将数据数组按cate_id从小到大排序
     sortDir(data){
         const dir=data;
         dir.sort(function(x,y){
@@ -50,8 +54,30 @@ export default class Directory extends React.Component {
         });
         this.setState({dir:dir})
     }
+
+    //传递给子组件的函数
+    //根据父频道获取其子频道信息,该函数传递给SideMenu和Title组件
+    getT2(e){
+        this.setState({dir:[]})
+        //取得short_name
+        const short_name=e.target.getAttribute("data")
+        const url=getT2Live(short_name);
+        fetch(url)
+            .then(resp=>resp.json())
+            .then(data=>this.setState({dir:data.data,showLive:false}))
+    }
+    //获取二级频道下所有直播房间
+    getT2Room(e){
+        //获取tag_id
+        const tag_id=e.target.getAttribute("data");
+        const url=getT2Room(tag_id);
+        fetch(url)
+        .then(resp=>resp.json())
+        .then(data=>this.setState({live:data.data,showLive:true}))
+    }
+
     componentWillMount(){
-        this.getAllLive();
+        // this.getAllLive();
         this.getAllDir();
         this.getT1();
     }
@@ -59,16 +85,19 @@ export default class Directory extends React.Component {
     render() {
         const sort=this.state.columns;
         const dir_list=this.state.dir.slice(0,9); 
+        const liveList=this.state.live.slice(0); 
         const dir_lists=this.state.dir.slice(0); 
-        return [
-            <div className={style.header} key="dir-header">
-                <Nav items={dir_list}/>
-            </div>,
-            <SideMenu key="dir-side-menu" sort={sort} />,
-            <div className={style.contianer} key="dir-items" >
-                <SortItems sort={sort} items={dir_lists}/>    
+        return (
+            <div>
+                <div className={style.header}>
+                    <Nav items={dir_list}/>
+                </div>,
+                <SideMenu key="dir-side-menu" sort={sort} onClick={this.getT2} />,
+                <div className={style.contianer}>
+                    <SortItems sort={sort} items={dir_lists} onClick={this.getT2} handleT2Room={this.getT2Room}
+                    liveList={liveList} showLive={this.state.showLive} />    
+                </div>
             </div>
-           
-    ]
+        )
     }
 }

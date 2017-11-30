@@ -15,7 +15,7 @@ export default class SideMenu extends React.Component{
     render(){
         const data=this.props.sort;
         const li=data.map((v)=>
-            <a href="/xx" key={v.cate_id} className={style.item}>
+            <a key={v.cate_id} className={style.item} data={v.short_name} onClick={this.props.onClick} >
                 {v.cate_name}
             </a>
         )

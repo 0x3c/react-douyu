@@ -26,11 +26,15 @@ export default class Item extends React.Component{
         return(
             <li className={style.itemContainer}>
                 <a className={style.itemBox} onMouseEnter={this.isHover} 
-                    onMouseLeave={this.isLeave} >
-                    <img className={style.itemThum} src={this.props.item.game_src} 
-                    style={isHover?{opacity: 0.8}:null} alt="xx" />
+                    onMouseLeave={this.isLeave}>
+                    {/* img 和 a 标签中的data存放频道id */}
+                    <img className={style.itemThum} src={this.props.item.game_src||this.props.item.pic_url} 
+                    style={isHover?{opacity: 0.8}:null} 
+                    alt="图片" onClick={this.props.handleT2Room} data={this.props.item.cate_id||this.props.item.tag_id} />
                     <p className={style.itemTitle} style={isHover?{borderBottomColor: "#D2D2D2"}:null}>
-                        <a>{this.props.item.game_name}</a>
+                        <a onClick={this.props.handleT2Room} data={this.props.item.cate_id||this.props.item.tag_id} >
+                            {this.props.item.game_name||this.props.item.tag_name}
+                        </a>
                     </p>
                 </a>
             </li>
