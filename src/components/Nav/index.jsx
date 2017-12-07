@@ -8,7 +8,8 @@ import Logo from './Logo/Logo.jsx'
 import NavList from './NavList/NavList.jsx'
 
 function xx(){
-    console.log(window.location.pathname)
+    // console.log(window.location.pathname)
+    console.log(document.body.clientWidth)
 }
 
 function Nav(props){

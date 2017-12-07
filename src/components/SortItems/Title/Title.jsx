@@ -19,7 +19,7 @@ export default function Title(props){
             </div>
             <ul className={style.classify}>
                 <li className={style.item}>
-                    <a href="/das">全部</a>
+                    <a href="/directory">全部</a>
                 </li>
                 {items}
             </ul>

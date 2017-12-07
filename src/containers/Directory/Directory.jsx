@@ -12,11 +12,13 @@ export default class Directory extends React.Component {
         super(props);
 
         //live: 所有直播房间列表
+        //hot: 热门分类
         //dir: 所有分类列表
         //columns: 一级分类列表
         this.state={
             showLive:false,
             live: [],
+            hot:[],
             dir: [],
             columns:[]
         };
@@ -48,11 +50,11 @@ export default class Directory extends React.Component {
     }
     //将数据数组按cate_id从小到大排序
     sortDir(data){
-        const dir=data;
-        dir.sort(function(x,y){
+        const hot=data;
+        hot.sort(function(x,y){
         return x.cate_id-y.cate_id
         });
-        this.setState({dir:dir})
+        this.setState({hot:hot})
     }
 
     //传递给子组件的函数
@@ -84,13 +86,13 @@ export default class Directory extends React.Component {
 
     render() {
         const sort=this.state.columns;
-        const dir_list=this.state.dir.slice(0,9); 
+        const hot_list=this.state.hot.slice(0,9); 
         const liveList=this.state.live.slice(0); 
-        const dir_lists=this.state.dir.slice(0); 
+        const dir_lists=this.state.dir.length>0?this.state.dir.slice(0):this.state.hot.slice(0); 
         return (
             <div>
                 <div className={style.header}>
-                    <Nav items={dir_list}/>
+                    <Nav items={hot_list}/>
                 </div>,
                 <SideMenu key="dir-side-menu" sort={sort} onClick={this.getT2} />,
                 <div className={style.contianer}>
