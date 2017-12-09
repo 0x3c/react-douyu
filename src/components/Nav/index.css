@@ -6,7 +6,8 @@
 }
 .header{
     width: 100%;
+    height: 100%;
     border-bottom-color: #4d4d4d;
-    position: fixed;
+    /* position: fixed; */
     background-color: #232323;
 }

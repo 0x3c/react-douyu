@@ -12,6 +12,10 @@
 }
 .room:hover{
     border-bottom: 3px solid #D2D2D2;
+    opacity: 0.8;
+}
+.room>a {
+    text-decoration: none;
 }
 .img{
     /* width:275px; */

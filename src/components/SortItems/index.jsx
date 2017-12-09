@@ -1,9 +1,12 @@
 import React from 'react'
 
+import style from './index.css'
+
 import Item from './Item'
 import Title from './Title/Title'
 import Loading from '../Loading'
 import RoomList from '../../components/RoomList/RoomList'
+
 // const SortItem=(item)=>{
 //     <li key={item.cate_id} className="sort-item">
 //     <a className="sort-item-box">
@@ -20,16 +23,22 @@ import RoomList from '../../components/RoomList/RoomList'
 //显示二级分类列表或二级频道下的直播房间列表
 //通过父组件state.showLive是否为true，展示不同列表
 
+// props: 
+// shortName: 传递给 Title, 通过判断当前 tag 的 shortName 来确定当前数据来自哪个 tag 的请求 
 export default function SortItems (props){
         const items=props.items.slice(0);
         const liveList=props.liveList.slice(0);
+        const shortName=props.shortName;
         return (
-            <div>
-                <Title sort={props.sort} onClick={props.onClick}/>
+            <div className={style.container}>
+                <Title sort={props.sort} shortName={shortName} onClick={props.onClick}/>
+                <div className={style.items}>
                 {props.showLive ?
                     <div>
-                    {
+                    {   liveList.length>0 ?
                         <RoomList list={liveList} />
+                        :
+                        <h3>该频道暂无直播</h3>
                     }
                     </div>:
                     <div>
@@ -43,6 +52,7 @@ export default function SortItems (props){
                         <Loading />}
                     </div>
                 }
+                </div>   
             
             </div>
         );

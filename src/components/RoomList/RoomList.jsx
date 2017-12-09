@@ -24,7 +24,7 @@ export default  class RoomList extends React.Component{
         // live为该组件id，获取本组件当前宽度，并计算出Room所需宽高
         const lives=document.getElementById('liveRoom');
         // const current_width=document.body.clientWidth-20;
-        const current_width=lives.offsetWidth-20;
+        const current_width=lives.offsetWidth-40;
         let width=0,height=0;
         // 275 330
         // 154.55 185.46

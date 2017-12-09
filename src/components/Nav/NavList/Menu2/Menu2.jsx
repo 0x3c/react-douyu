@@ -6,7 +6,7 @@ export default function Menu2(props){
     const isHover=props.isHover;
     const items = props.items;
     const itemList=items.map((v)=>{
-        return <li key={v.cate_id}><a target="_blank"  href={"/"+v.cate_id}>{v.game_name}</a></li>
+        return <li key={v.cate_id}><a target="_blank"  href={"/directory/"+v.short_name}>{v.game_name}</a></li>
     })
     return(
         isHover &&

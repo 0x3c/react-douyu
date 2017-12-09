@@ -1,12 +1,14 @@
 import React from 'react'
 import 'whatwg-fetch'
 
-import style from'./index.css'
+import style from'./lives.css'
 
 import RoomList from '../../components/RoomList/RoomList.jsx'
 import Nav from '../../components/Nav'
 
-class Home extends React.Component{
+
+import {getT2Room} from '../../utils/API.js'
+class Lives extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -17,16 +19,23 @@ class Home extends React.Component{
         this.getAllDir=this.getAllDir.bind(this);
         this.sortDir=this.sortDir.bind(this);
     }
+    // 获取当前频道所有 live
     getAllLive(){
-        fetch('/api/RoomApi/live')
+        // 获取二级频道
+        const short_name=this.props.match.params.short_name;
+        const url=getT2Room(short_name);
+        fetch(url)
         .then(resp=>{console.log(resp);return resp.json()})
         .then(data=>this.setState({live:data.data}))
     }
+
+    // 初始化菜单中频道
     getAllDir(){
         fetch('/api/RoomApi/game')
         .then(resp=>{console.log(resp);return resp.json()})
         .then(data=>this.sortDir(data.data))
     }
+    // 对频道排序
     sortDir(data){
         const dir=data;
         dir.sort(function(x,y){
@@ -34,6 +43,7 @@ class Home extends React.Component{
         });
         this.setState({dir:dir})
     }
+
     componentWillMount(){
         this.getAllLive();
         this.getAllDir();
@@ -48,10 +58,10 @@ class Home extends React.Component{
                 <Nav items={dir_list} />
             </div>,
             <div className={style.contianer} key="hom2">
-                <RoomList list={live} />
+                <RoomList list={live}/>
             </div>
         ]
     }
 
 }
-export default Home
+export default Lives

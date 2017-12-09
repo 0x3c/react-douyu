@@ -178,6 +178,7 @@ module.exports = {
                   importLoaders: 1,
                   modules: true,
                   localIdentName:"[name]_[local]-[hash:base64:5]",
+                  exclude:'/src/index.css'
                 },
               },
               {

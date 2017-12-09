@@ -1,21 +1,23 @@
 .warpper{
-    margin-top: 60px;
     width: 100%;
-    margin-bottom: 20px;
+    padding: 20px 25px 10px;
     color: #575757;
     font-size: 28px;
-    overflow: hidden;
+    flex:none;
+    box-sizing: border-box;
 }
 .title{
+    
     white-space: nowrap;
     margin-right: 17px;
     float: left;
 }
 .classify{
     margin-top: 10px;
-    height: 26px;
-    overflow: hidden;
+    /* height: 26px; */
+    /* overflow: hidden; */
     float: left;
+    padding-bottom: 15px;
 }
 .clear{
     clear: both;
@@ -41,9 +43,6 @@
 .item a:hover{
     color: #f60;
     border: 1px solid #f60;
-}
-.hr{
-    margin-top: 20px;
 }
 .selected{
     background-color: #f60;

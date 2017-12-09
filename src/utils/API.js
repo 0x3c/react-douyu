@@ -33,7 +33,10 @@ function getT1Room(cate_id,limit=20,offset=0){
     return `/api/v1/getColumnRoom/${cate_id}?limit=${limit}&offset=${offset}`
 }
 
-//获取子频道所有直播列表
+// 获取子频道所有直播列表
+// 从第 offset 个数据开始，获取 limit 个数据,通过返回的数组长度是否小于 limit 判断是否还有未获取到的数据 
+// tag_id or short_name
+
 function getT2Room(tag_id,limit=20,offset=0){
     return `/api/v1/live/${tag_id}?&limit=${limit}&offset=${offset}`
 }
