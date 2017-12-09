@@ -7,10 +7,6 @@ import style from './index.css'
 import Logo from './Logo/Logo.jsx'
 import NavList from './NavList/NavList.jsx'
 
-function xx(){
-    // console.log(window.location.pathname)
-    console.log(document.body.clientWidth)
-}
 
 function Nav(props){
     const items=props.items;
@@ -20,7 +16,6 @@ function Nav(props){
                 <Logo />
                 <NavList items={items}/>
                 {/* <User /> */}
-                <button onClick={xx}>xxx</button>
             </div>
         </div>
     )
