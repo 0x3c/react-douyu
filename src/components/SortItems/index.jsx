@@ -36,7 +36,7 @@ export default function SortItems (props){
                 {props.showLive ?
                     <div>
                     {   liveList.length>0 ?
-                        <RoomList list={liveList} />
+                        <RoomList list={liveList} title={liveList.length>0 && liveList[0].game_name} />
                         :
                         <h3>该频道暂无直播</h3>
                     }

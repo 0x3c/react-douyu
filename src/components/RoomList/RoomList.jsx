@@ -1,11 +1,14 @@
 import React from 'react'
+
 import Room from './Room/Room'
+import Title from './Title/Title'
 
 import style from './RoomList.css'
 
 
 // props： 
 // list：直播房间列表,数组
+// title: 直播列表类别,传递给 Title 
 
 export default  class RoomList extends React.Component{
     constructor(props){
@@ -29,7 +32,7 @@ export default  class RoomList extends React.Component{
         // 275 330
         // 154.55 185.46
         if(current_width%(310+20)>0){
-            const n=parseInt(current_width/(310+20));
+            const n=parseInt(current_width/(310+20),10);
             width=current_width/(n+1)-20;
             height=width/base+45;
         }
@@ -49,6 +52,7 @@ export default  class RoomList extends React.Component{
         )
         return (
             <div className={style.container} id="liveRoom">
+                <Title title={this.props.title} url={list.length>0&&list[0].game_url}/>
                 <ul className={style.roombox}>
                     {roomlist}
                 </ul>

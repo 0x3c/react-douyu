@@ -19,12 +19,12 @@ class Home extends React.Component{
     }
     getAllLive(){
         fetch('/api/RoomApi/live')
-        .then(resp=>{console.log(resp);return resp.json()})
+        .then(resp=>{return resp.json()})
         .then(data=>this.setState({live:data.data}))
     }
     getAllDir(){
         fetch('/api/RoomApi/game')
-        .then(resp=>{console.log(resp);return resp.json()})
+        .then(resp=>{return resp.json()})
         .then(data=>this.sortDir(data.data))
     }
     sortDir(data){
@@ -48,7 +48,7 @@ class Home extends React.Component{
                 <Nav items={dir_list} />
             </div>,
             <div className={style.contianer} key="hom2">
-                <RoomList list={live} />
+                <RoomList list={live} title="所有直播" />
             </div>
         ]
     }

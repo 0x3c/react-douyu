@@ -10,7 +10,7 @@ export default class NavList extends React.Component{
         super(props);
         this.state={
             isHover:false,
-            path:['/','/live','/directory','/game'],
+            path:['/','/live','/directory'],
             location:""
         };
         this.onHover=this.onHover.bind(this);
@@ -55,9 +55,9 @@ export default class NavList extends React.Component{
                     <Drop isHover={isHover} />
                     <Menu2 items={items} isHover={isHover} className="navlist-menu2"/>
                 </li>
-                <li> 
+                {/* <li> 
                     <a href={path[3]} className={url===path[3]?style.selected:null}> 游戏 </a> 
-                </li>
+                </li> */}
             </ul>
         )    
     }
