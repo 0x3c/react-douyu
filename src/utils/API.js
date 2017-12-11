@@ -45,8 +45,8 @@ function getT2Room(tag_id,limit=20,offset=0){
 
 
 //搜索直播间
-function searchRoom(str){
-    return `/api/v1/searchNew/${str}/1?limit=5&offset=0`
+function searchRoom(str,limit=20,offset=0){
+    return `/api/v1/searchNew/${str}/1?limit=${limit}&offset=${offset}`
 }
 
 
@@ -85,4 +85,4 @@ function delRemind(token,ids){
     return `/api/v1/follow/del`
 }
 
-export {getT1Live,getT2Live,getT2Room}
+export {getT1Live,getT2Live,getT2Room,searchRoom}
