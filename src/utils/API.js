@@ -85,4 +85,11 @@ function delRemind(token,ids){
     return `/api/v1/follow/del`
 }
 
-export {getT1Live,getT2Live,getT2Room,searchRoom}
+
+// 未来功能
+// 等待更新
+function handleFeature(e){
+    alert('等待更新');
+    e.preventDefault();
+}
+export {getT1Live,getT2Live,getT2Room,searchRoom,handleFeature}

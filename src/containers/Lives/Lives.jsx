@@ -76,7 +76,7 @@ class Lives extends React.Component{
     } 
     // 利用改生命周期，监听路由变化，重新请求数据
     componentWillReceiveProps(nextProps){
-        if (nextProps.location.pathname != this.props.location.pathname) {
+        if (nextProps.location.pathname !== this.props.location.pathname) {
             this.getSearch()
         } 
     }

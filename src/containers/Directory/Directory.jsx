@@ -118,7 +118,7 @@ export default class Directory extends React.Component {
                         <Nav items={hot_list}/>
                     </div>,
                     <div className={style.wrapper}>
-                        <SideMenu key="dir-side-menu" sort={sort} onClick={this.handleGetAndSetTag} />,
+                        <SideMenu key="dir-side-menu" shortName={shortName} sort={sort} onClick={this.handleGetAndSetTag} />,
                         <div className={style.contianer}>
                             <SortItems sort={sort} items={dir_lists} shortName={shortName} onClick={this.handleGetAndSetTag} handleT2Room={this.getT2Room}
                             liveList={liveList} showLive={this.state.showLive} />    
