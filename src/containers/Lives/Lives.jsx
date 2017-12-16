@@ -5,7 +5,6 @@ import style from'./lives.css'
 
 import {searchRoom} from '../../utils/API.js'
 import RoomList from '../../components/RoomList/RoomList.jsx'
-import Nav from '../../components/Nav'
 
 import {getT2Room} from '../../utils/API.js'
 
@@ -16,13 +15,10 @@ class Lives extends React.Component{
         super(props);
         this.state={
             live: {},
-            dir: [],
             isSearch: false,
             search_count: 0
         };
         this.getAllLive=this.getAllLive.bind(this);
-        this.getAllDir=this.getAllDir.bind(this);
-        this.sortDir=this.sortDir.bind(this);
         this.getSearch=this.getSearch.bind(this);
     }
     // 获取当前频道所有 live
@@ -38,20 +34,6 @@ class Lives extends React.Component{
         }
     }
 
-    // 初始化菜单中频道
-    getAllDir(){
-        fetch('/api/RoomApi/game')
-        .then(resp=>{return resp.json()})
-        .then(data=>this.sortDir(data.data))
-    }
-    // 对频道排序
-    sortDir(data){
-        const dir=data;
-        dir.sort(function(x,y){
-            return x.cate_id-y.cate_id
-        });
-        this.setState({dir:dir})
-    }
 
     // 初始化搜索信息
     getSearch(){
@@ -68,7 +50,6 @@ class Lives extends React.Component{
 
     componentWillMount(){
         this.getSearch()
-        this.getAllDir();
         this.getAllLive();
     }
     componentDidMount(){
@@ -81,13 +62,9 @@ class Lives extends React.Component{
         } 
     }
     render(){
-        const dir_list=this.state.dir.slice(0,9); 
         const live=this.state.live;
         const isSearch=this.state.isSearch;
         return [         
-            <div className={style.header}  key="hom1">       
-                <Nav items={dir_list} />
-            </div>,
             <div className={style.contianer} key="hom2" >
                 <RoomList list={live} 
                 title={isSearch?`搜索结果: ${this.props.match.params.search_str}`

@@ -5,8 +5,8 @@
     justify-content: center;
 }
 .wrapper{
+    margin-top: 20px;
     height: inherit;
-    
 }
 .header{
     display: flex;

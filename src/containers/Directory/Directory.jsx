@@ -3,7 +3,6 @@ import {getT1Live,getT2Live,getT2Room} from '../../utils/API.js'
 import style from './directory.css'
 import  'whatwg-fetch'
 
-import Nav from '../../components/Nav'
 import SortItems from '../../components/SortItems'
 import SideMenu from '../../components/SideMenu/SideMenu'
 
@@ -109,14 +108,10 @@ export default class Directory extends React.Component {
     render() {
         const sort=this.state.columns;
         const shortName=this.state.short_name;
-        const hot_list=this.state.hot.slice(0,9); 
         const liveList=this.state.live.slice(0); 
         const dir_lists=this.state.dir.length>0?this.state.dir.slice(0):this.state.hot.slice(0); 
         return (
                 [
-                    <div className={style.header}>
-                        <Nav items={hot_list}/>
-                    </div>,
                     <div className={style.wrapper}>
                         <SideMenu key="dir-side-menu" shortName={shortName} sort={sort} onClick={this.handleGetAndSetTag} />,
                         <div className={style.contianer}>
