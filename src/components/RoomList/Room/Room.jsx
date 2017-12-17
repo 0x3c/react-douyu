@@ -1,13 +1,13 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
-
+import { Link } from 'react-router-dom'
 
 import style from './Room.css'
 export default function Room(props){
     const info=props.room_info;
     return (
         <li className={style.room} style={{width:props.width,height:props.height}}>
-            <a href={`/live/${info.room_id}`} target="_blank">
+            <Link to={`/live/${info.room_id}`}>
                 <img className={style.img} src={info.room_src} alt={info.room_name} />
                 <div className={style.msg}>
                         <div className={style.title}>
@@ -27,7 +27,7 @@ export default function Room(props){
                             </span>
                         </p>
                 </div>
-           </a>
+           </Link>
         </li>
     )
 }

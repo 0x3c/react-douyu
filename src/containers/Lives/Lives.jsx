@@ -22,9 +22,9 @@ class Lives extends React.Component{
         this.getSearch=this.getSearch.bind(this);
     }
     // 获取当前频道所有 live
-    getAllLive(){
+    getAllLive(path=null){
         // 获取二级频道
-        const short_name=this.props.match.params.short_name;
+        const short_name=path ? path : this.props.match.params.short_name;
         if(short_name)
         {
             const url=getT2Room(short_name);
@@ -36,9 +36,9 @@ class Lives extends React.Component{
 
 
     // 初始化搜索信息
-    getSearch(){
+    getSearch(path=null){
         // 获取 search_str 路由字段
-        const str=this.props.match.params.search_str;
+        const str=path ? path : this.props.match.params.search_str;
         if(str){
             this.setState({isSearch:true})
             const url=searchRoom(str,20,0);
@@ -49,16 +49,21 @@ class Lives extends React.Component{
     }
 
     componentWillMount(){
-        this.getSearch()
+        this.getSearch();
         this.getAllLive();
     }
     componentDidMount(){
     
     } 
-    // 利用改生命周期，监听路由变化，重新请求数据
+    // 利用该生命周期，监听路由变化，重新请求数据
     componentWillReceiveProps(nextProps){
         if (nextProps.location.pathname !== this.props.location.pathname) {
-            this.getSearch()
+            if(nextProps.match.params.search_str){
+                this.getSearch(nextProps.match.params.search_str);
+            }
+            if(nextProps.match.params.short_name){
+                this.getAllLive(nextProps.match.params.short_name);
+            }
         } 
     }
     render(){

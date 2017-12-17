@@ -52,7 +52,7 @@ export default  class RoomList extends React.Component{
         )
         return (
             <div className={style.container} id="liveRoom">
-                <Title title={this.props.title} url={list.length>0&&list[0].game_url}/>
+                <Title title={this.props.title} url={list.length>0 && list[0].game_url}/>
                 <ul className={style.roombox}>
                     {roomlist}
                 </ul>

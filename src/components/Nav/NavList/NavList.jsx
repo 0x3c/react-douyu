@@ -9,9 +9,7 @@ export default class NavList extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            isHover:false,
-            path:['/','/live','/directory'],
-            location:""
+            isHover:false
         };
         this.onHover=this.onHover.bind(this);
         this.onLeave=this.onLeave.bind(this);
@@ -26,32 +24,30 @@ export default class NavList extends React.Component{
             return;
         }
         this.setState({isHover:true});
-        console.log('hovered')
+        // console.log('hovered')
     }
     onLeave(){
         //隐藏二级菜单
         const isHover=this.state.isHover;
         if(isHover){
             this.setState({isHover:false});
-            console.log('dispeared!')
+            // console.log('dispeared!')
         }
     }
     render(){
         const isHover=this.state.isHover;
         const items=this.props.items;
-        const url=window.location.pathname;
-        const path=this.state.path;
         return (
             <ul className={style.container}>
-                <li> <a href={path[0]}  
-                    className={url===path[0]?style.selected:null}> 首页 </a> 
+                <li> <NavLink to="/" exact
+                    activeClassName={style.selected}> 首页 </NavLink> 
                 </li>
                 <li> 
-                    <a href={path[1]}  className={url===path[1]?style.selected:null}> 直播 </a> 
+                    <NavLink to="/live" activeClassName={style.selected}> 直播 </NavLink> 
                 </li>
                 <li onMouseEnter={this.onHover}
                     onMouseLeave={this.onLeave}> 
-                    <a href={path[2]}  className={url===path[2]?style.selected:null}> 分类 </a> 
+                    <NavLink to="/directory"  activeClassName={style.selected}> 分类 </NavLink> 
                     <Drop isHover={isHover} />
                     <Menu2 items={items} isHover={isHover} className="navlist-menu2"/>
                 </li>
