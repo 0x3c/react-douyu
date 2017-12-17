@@ -25,7 +25,7 @@ export default class Item extends React.Component{
         const isHover=this.state.isHover;
         return(
             <li className={style.itemContainer}>
-                <a className={style.itemBox} onMouseEnter={this.isHover} 
+                <span className={style.itemBox} onMouseEnter={this.isHover} 
                     onMouseLeave={this.isLeave}>
                     {/* img 和 a 标签中的data存放频道id */}
                     <img className={style.itemThum} src={this.props.item.game_src||this.props.item.pic_url} 
@@ -36,7 +36,7 @@ export default class Item extends React.Component{
                             {this.props.item.game_name||this.props.item.tag_name}
                         </a>
                     </p>
-                </a>
+                </span>
             </li>
         )
     }

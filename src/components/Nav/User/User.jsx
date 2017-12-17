@@ -12,7 +12,11 @@ export default class User extends React.Component{
             <ul className={style.wrapper}>
                 <FontAwesome name="user" size="lg"/> &ensp;
                 {   login.isLogin ?
-                    <span><Link onClick={handleFeature} to={`/user/${login.username}`} style={{color:"#fff"}}>{login.username}</Link></span>                
+                    <span>
+                        <Link onClick={handleFeature} to={`/user/${login.username}`} style={{color:"#0f0"}}>{login.username}</Link>
+                        &ensp;|&ensp;
+                        <Link onClick={this.props.handleLoginOut} to={`/user/${login.username}`} style={{color:"#0f0"}}>退出</Link>
+                    </span>                
                     :
                     <span>
                         <span className={style.btn} onClick={this.props.handleShowLogin}> 登录 </span>

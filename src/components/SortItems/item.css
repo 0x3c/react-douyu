@@ -12,6 +12,7 @@
     width: 132px;
     /* height: 183px; */
     position: relative;
+    cursor: pointer;
 }
 
 .itemThum {

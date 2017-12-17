@@ -33,13 +33,13 @@ export default class SideMenu extends React.Component{
         const data=this.props.sort;
         // 标签 UI list
         let li=data.map((v)=>
-            <a key={v.cate_id} className={style.item} 
+            <a key={`sidebar-${v.cate_id}`} className={style.item} 
             style={shortName===v.short_name?selected:null}
             data={v.short_name} onClick={this.props.onClick} >
                 {v.cate_name}
             </a>
         )
-        const head=<a   className={style.item} 
+        const head=<a   className={style.item} key="sidebar-all"
                         style={shortName==="all"?selected:null}
                         data="all" onClick={this.props.onClick} >
                         所有分类

@@ -112,7 +112,7 @@ export default class Directory extends React.Component {
         const dir_lists=this.state.dir.length>0?this.state.dir.slice(0):this.state.hot.slice(0); 
         return (
                 [
-                    <div className={style.wrapper}>
+                    <div className={style.wrapper} key="page-dir">
                         <SideMenu key="dir-side-menu" shortName={shortName} sort={sort} onClick={this.handleGetAndSetTag} />,
                         <div className={style.contianer}>
                             <SortItems sort={sort} items={dir_lists} shortName={shortName} onClick={this.handleGetAndSetTag} handleT2Room={this.getT2Room}

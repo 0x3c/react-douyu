@@ -10,12 +10,16 @@ class Live extends React.Component{
     constructor(props){
         super(props);
         this.state={
+            // 服务器返回状态码, -1 为没有此 live
             fetch_status:-1,
-            room_info:null
+            room_info:null,
+            loginStatus:null
+
         };
         this.getRoomInfo=this.getRoomInfo.bind(this);
         this.getOpened=this.getOpened.bind(this);
     }
+
     // 获取房间详细信息
     getRoomInfo(){
         const room_id=this.props.match.params.id;
@@ -34,15 +38,27 @@ class Live extends React.Component{
         const times=parseInt((timestamp2-timestamp)/1000/60,10);
         return times;
     }
-
+    //  获取 localStorage 中登录信息
+    getLoginStorage=()=>{
+        const loginStatus=JSON.parse(localStorage.getItem("login"));
+        this.setState({loginStatus:loginStatus});
+    }
     componentWillMount(){
         this.getRoomInfo();
+        this.getLoginStorage();
+    }
+    componentDidMount(){
+        window.addEventListener("storageChanged",this.getLoginStorage)
+    }
+    componentWillUnmount(){
+        window.removeEventListener("storageChanged",this.getLoginStorage)
     }
 
     render(){
         const room=this.state.room_info;
         const room_id=room ? room.room_id:null;
         const fetch_status=this.state.fetch_status;
+        const isLogin=this.state.loginStatus===null ? false : this.state.loginStatus.isLogin;
         // 获取已开播时间
         const times=room_id && this.getOpened();
         // const room_id=null;
@@ -63,13 +79,25 @@ class Live extends React.Component{
                                         {room.room_name}
                                         <a href={`/report/uid=${room.room_id}`} onClick={handleFeature}>举报</a>
                                     </h2>
-                                    <div className={style.fans}>
-                                        <span className={style.fansIcon}>
-                                            <FontAwesome name="heart"/>
-                                            <span className={style.text}>关注</span>
+                                    {/* 判断是否登录渲染不同UI */}
+                                    {
+                                        isLogin ?
+                                        <div className={style.fans}>
+                                            <span className={style.fansIcon}>
+                                                <FontAwesome name="heart"/>
+                                                <span onClick={handleFeature} className={style.text}>关注</span>
                                             </span>  
-                                        <span className={style.fansNum}>{room.fans_num}</span>
-                                    </div>
+                                            <span className={style.fansNum}>{room.fans_num}</span>
+                                        </div>
+                                        :
+                                        <div className={style.fans}>
+                                        <span className={style.fansIcon}>
+                                                <FontAwesome name="heart"/>
+                                                <span className={style.text}>请登录</span>
+                                            </span>  
+                                            <span className={style.fansNum}>{room.fans_num}</span>
+                                        </div>
+                                    }
                                 </div>
                                 
                                 {/* 类别与开播时间 */}

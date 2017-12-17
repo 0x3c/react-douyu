@@ -55,6 +55,7 @@
     margin-left: 10px;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
 .fansNum{
     display: inline-block;

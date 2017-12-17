@@ -34,14 +34,14 @@ export default function SortItems (props){
                 <Title sort={props.sort} shortName={shortName} onClick={props.onClick}/>
                 <div className={style.items}>
                 {props.showLive ?
-                    <div>
+                    <div className={style.h100}>
                     {   liveList.length>0 ?
                         <RoomList list={liveList} title={liveList.length>0 && liveList[0].game_name} />
                         :
                         <h3>该频道暂无直播</h3>
                     }
                     </div>:
-                    <div>
+                    <div className={style.h100}>
                     { items.length>0 ?
                         items.map((item)=>
                         {

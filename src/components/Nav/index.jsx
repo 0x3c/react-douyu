@@ -1,8 +1,7 @@
 import React from 'react'
-
 import style from './index.css'
 
-
+import '../../utils/API.js'
 import User from './User/User.jsx'
 import Logo from './Logo/Logo.jsx'
 import NavList from './NavList/NavList.jsx'
@@ -72,9 +71,19 @@ class Nav extends React.Component{
     handleRegister=()=>{
         alert("尚未开放注册!")
     }
+    //  退出登录
+    handleLoginOut=(e)=>{
+        localStorage.removeItem("login");
+        this.setState({login:{
+                isShowDialog:false,
+                isLogin:false,
+                username:null,
+        }});
+        e.preventDefault();
+    }
     componentWillMount(){
         const login=JSON.parse(localStorage.getItem("login"));
-        if(login.isLogin){
+        if(login!==null){
             this.setState({
                 login:login
             })
@@ -96,7 +105,7 @@ class Nav extends React.Component{
                     <div className={style.nav}>
                         <Logo />
                         <NavList items={items}/>
-                        <User handleShowLogin={this.handleShowLogin} login={this.state.login} handleRegister={this.handleRegister}/>
+                        <User handleShowLogin={this.handleShowLogin} handleLoginOut={this.handleLoginOut} login={this.state.login} handleRegister={this.handleRegister}/>
                         <Search />
                     </div>
                 :

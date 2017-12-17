@@ -8,7 +8,7 @@ import Live from '../components/Live/Live.jsx'
 
 import Nav from '../components/Nav'
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import style from './route.css'
 
