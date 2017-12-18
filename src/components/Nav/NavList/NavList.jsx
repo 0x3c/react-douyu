@@ -1,6 +1,6 @@
 import React from 'react'
-
-import './navlist.css'
+import { NavLink } from 'react-router-dom'
+import style from './navlist.css'
 
 import Drop from './Drop/Drop'
 import Menu2 from './Menu2/Menu2'
@@ -38,15 +38,22 @@ export default class NavList extends React.Component{
         const isHover=this.state.isHover;
         const items=this.props.items;
         return (
-            <ul className="navlist-ul">
-                <li> <a href="#"> 首页 </a> </li>
-                <li> <a href="#"> 直播 </a> </li>
+            <ul className={style.container}>
+                <li> <NavLink to="/" exact
+                    activeClassName={style.selected}> 首页 </NavLink> 
+                </li>
+                <li> 
+                    <NavLink to="/live" activeClassName={style.selected}> 直播 </NavLink> 
+                </li>
                 <li onMouseEnter={this.onHover}
                     onMouseLeave={this.onLeave}> 
-                    <a href="#"> 分类 </a> <Drop isHover={isHover} />
+                    <NavLink to="/directory"  activeClassName={style.selected}> 分类 </NavLink> 
+                    <Drop isHover={isHover} />
                     <Menu2 items={items} isHover={isHover} className="navlist-menu2"/>
                 </li>
-                <li> <a href="#"> 游戏 </a> </li>
+                {/* <li> 
+                    <a href={path[3]} className={url===path[3]?style.selected:null}> 游戏 </a> 
+                </li> */}
             </ul>
         )    
     }

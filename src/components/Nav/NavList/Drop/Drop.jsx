@@ -1,13 +1,13 @@
 import React from 'react'
 
-import './drop.css'
+import style from './drop.css'
 
 export default function Drop(props){
     const isHover=props.isHover;
     return(
         isHover ?
-        <i className="drop-icon drop-icon-hover"></i>
+        <i className={[style.normal,style.hover].join(" ")}></i>
         :
-        <i className="drop-icon" ></i>
+        <i className={style.normal} ></i>
     )
 }
